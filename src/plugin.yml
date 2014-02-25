@@ -1,0 +1,5 @@
+name: TabSlotManager
+main: tabslotmanager.TabSlotManager
+version: 1
+depend: [ProtocolLib]
+author: _Shevchik_
