@@ -67,7 +67,11 @@ public class TabSlotManager extends JavaPlugin implements Listener {
 
 	private void initLoginListener() {
 		pManager.addPacketListener(
-			new PacketAdapter(this, PacketType.Play.Server.LOGIN) {
+			new PacketAdapter(
+				PacketAdapter
+				.params(this, PacketType.Play.Server.LOGIN)
+				.optionAsync()
+			) {
 				@Override
 				public void onPacketSending(PacketEvent event) {
 					event.getPacket().getIntegers().write(2, slots);
